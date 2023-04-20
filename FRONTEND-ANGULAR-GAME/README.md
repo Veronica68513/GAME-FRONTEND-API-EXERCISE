@@ -7,12 +7,15 @@ This Frontend connect with API Game.
 
 Configuration Frontend:
 
-1- Configure the API endpoint.
+1- Configure the API URL.
 
-file: src/app/services/game.service.ts
+file: src/environments/environment.ts
 
 ```
-const baseUrl = 'http://localhost:8089/api/games';
+  export const environment = {
+    production: false,
+    apiUrl: 'http://localhost:8089/api/games'
+  }
 
 ```
 
