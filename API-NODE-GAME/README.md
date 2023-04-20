@@ -17,11 +17,25 @@ var corsOptions = {
 };
 ```
 
-1- Revise and configure the port of the aplication. By default the app will be run on 8080.
+2- Revise and configure the port of the aplication. By default the app will be run on 8080.
 
 Run terminal: 
 ```
 export PORT=8085
+
+```
+
+
+3- Connection to MongoDB.
+
+Currently is connected to a MongoDB Atlas Cluster. 
+Configure to local MongoDB:
+
+file: app/config/db.config.js
+```
+module.exports = {
+    url: "mongodb://localhost:27017/veronica"
+  };
 
 ```
 
@@ -34,3 +48,9 @@ npm install
 ```
 node server.js
 ```
+
+### Test
+
+Test in terminal:
+
+sh test.api.sh
