@@ -1,0 +1,50 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="game.name"
+            name="name"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="game.description"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="release">Release</label>
+          <input
+            type="date"
+            class="form-control"
+            id="release"
+            required
+            [(ngModel)]="game.release"
+            name="release"
+          />
+        </div>
+       
+        
+  
+        <button (click)="saveGame()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Game was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newGame()">Add</button>
+      </div>
+    </div>
+  </div>
+  

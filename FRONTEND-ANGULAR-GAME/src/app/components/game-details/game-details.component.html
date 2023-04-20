@@ -1,0 +1,110 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentGame.id">
+      <h4>Game</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentGame.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentGame.description }}
+      </div>
+      <div>
+        <label><strong>Release:</strong></label>
+        {{ currentGame.release | date: 'dd/MM/yyyy' }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentGame.published ? "Published" : "Pending" }}
+      </div>
+  
+      <a
+        class="button-action badge badge-warning"
+        routerLink="/games/{{ currentGame.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentGame">
+      <br />
+      <p>Please click on a Game...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentGame.id" class="edit-form">
+      <h4>Game</h4>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentGame.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentGame.description"
+            name="description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="release">Release</label>
+          <input
+            type="date"
+            class="form-control"
+            id="release"
+            (change)="onChange($event)"
+            value="{{ currentGame.release | date:'yyyy-MM-dd' }}"
+            name="release"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentGame.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="button-action badge badge-primary mr-2"
+        *ngIf="currentGame.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentGame.published"
+        class="button-action badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="button-action badge badge-danger mr-2" (click)="deleteGame()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="button-action badge badge-success mb-2"
+        (click)="updateGame()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentGame.id">
+      <br />
+      <p>Cannot access this Game...</p>
+    </div>
+  </ng-template>
+  
