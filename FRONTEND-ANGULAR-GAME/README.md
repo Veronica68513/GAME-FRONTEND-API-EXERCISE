@@ -1,6 +1,6 @@
 # FRONTEND NODE GAME
 
-This Fronted Game has build with Angular v15, HttpClient, Router and Bootstrap. 
+This Frontend Game has build with Angular v15, HttpClient, Router and Bootstrap. 
 This Frontend connect with API Game.
 
 ## Setup 
