@@ -1,18 +1,15 @@
 # VIDEOGAME Example
 This videogame example contains 2 projects (Frontend and API)
-## Demo
-It has been deployed in Vercel. Demo link: 
 
 ## Setup
+README API NODE [link](API-NODE-GAME/README.md)
 
-README API NODE
-
-README FRONTED
+README FRONTEND [link](FRONTEND-ANGULAR-GAME/README.md)
 
 ## Considerations
 There are three main ways of handling file uploads:
 
-1- Saving the images directly to your server / static folder (this demo)
+1- Saving the images directly to your server / static folder (I will include next version of this demo)
 2- Saving the image’s binary data or base64 string data to your database, or Grid FS is a feature in MongoDB
 3- Using Amazon Web Service (AWS) S3 buckets, Google Cloud Storage or other storage service to save and manage your images (my recommended option)
 
