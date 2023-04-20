@@ -50,8 +50,7 @@ node server.js
 ```
 
 ### Test
-```
 Test in terminal:
-
+```
 sh test.api.sh
 ```
