@@ -29,13 +29,11 @@ export PORT=8085
 3- Connection to MongoDB.
 
 Currently is connected to a MongoDB Atlas Cluster. 
-Configure to local MongoDB:
+Configure connection to MongoDB:
 
-file: app/config/db.config.js
+file: .env
 ```
-module.exports = {
-    url: "mongodb://localhost:27017/veronica"
-  };
+MONGODB_URI="mongodb://localhost:27017/veronica"
 
 ```
 
