@@ -4,7 +4,7 @@ const app = express();
 
 // CORS: define url frontend app (permit cors)
 var corsOptions = {
-  origin: "http://localhost:4200"
+  origin: process.env.CORS_ORIGIN || "http://localhost:4200"
 };
 
 // permit access from url frontend app
@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 require("./app/routes/game.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8088;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
