@@ -1,6 +1,11 @@
 # VIDEOGAME Example
 This videogame example contains 2 projects (Frontend and API)
 
+## Demo
+Frontend: https://frontend-angular-game.onrender.com
+API Node: https://api-node-game.onrender.com
+Connection to MongoDB Altas Cluster
+
 ## Setup
 README API NODE [link](API-NODE-GAME/README.md)
 
